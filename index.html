@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ремонт мягкой кровли гаражей — Качественно и с гарантией</title>
+    <style>
+        :root {
+            --primary: #3498db;     /* Современный синий */
+            --accent: #e67e22;      /* Оранжевый акцент для кнопок */
+            --dark: #0f172a;        /* Глубокий темно-синий */
+            --light: #f8fafc;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+        
+        /* Шапка с эффектом жидкого синего стекла */
+        header {
+            background: linear-gradient(135deg, #032057 0%, #0a275a 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Декоративные жидкие сферы на фоне для усиления эффекта */
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50px; left: -50px;
+            width: 200px; height: 200px;
+            background: rgba(52, 152, 219, 0.4);
+            filter: blur(50px);
+            border-radius: 50%;
+        }
+
+        /* Эффект матового жидкого стекла (Glassmorphism) */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+        }
+        header h1 { 
+            margin: 0 0 15px 0; 
+            font-size: 2.8rem; 
+            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        header p { font-size: 1.3rem; color: #e2e8f0; margin: 0; }
+        
+        .container {
+            max-width: 850px;
+            margin: -40px auto 0; /* Наползание на шапку для объема */
+            padding: 0 20px 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .benefit-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--primary);
+            transition: transform 0.2s;
+        }
+        .benefit-card:hover { transform: translateY(-5px); }
+        .benefit-card h3 { margin-top: 0; color: var(--dark); }
+
+        .prices {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 15px 0;
+        }
+        .price-row:last-of-type { border: none; }
+        .price-row strong { color: var(--primary); font-size: 1.2rem; }
+
+        /* Стильный калькулятор */
+        .calc-box {
+            background: #f1f5f9; 
+            padding: 25px; 
+            border-radius: 12px; 
+            margin-top: 25px; 
+            border: 1px solid #e2e8f0;
+        }
+        .calc-box label { display: block; margin-bottom: 5px; font-weight: bold; color: var(--dark); }
+        .calc-box div { margin-bottom: 15px; }
+        .calc-box select, .calc-box input {
+            width: 100%; 
+            padding: 10px; 
+            border-radius: 6px; 
+            border: 1px solid #cbd5e1; 
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        .portfolio h2, .prices h2 { color: var(--dark); }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            background-color: #cbd5e1;
+        }
+
+        /* Современная контрастная форма */
+        .cta-form {
+            background: var(--dark);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);
+        }
+        .cta-form input {
+            width: 90%;
+            max-width: 350px;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #334155;
+            border-radius: 6px;
+            font-size: 1rem;
+            background: #1e293b;
+            color: white;
+            box-sizing: border-box;
+        }
+        .cta-form button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 15px;
+            box-shadow: 0 4px 6px rgba(230, 126, 34, 0.3);
+            transition: 0.2s;
+        }
+        .cta-form button:hover { 
+            background: #d35400; 
+            transform: scale(1.02);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9rem;
+            color: #64748b;
+            background: #e2e8f0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="glass-card">
+            <h1>Ремонт мягкой кровли гаражей</h1>
+            <p>Профессиональный монтаж за 1 день от мастеров с опытом более 10 лет</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Блок преимуществ -->
+        <section class="benefits">
+            <div class="benefit-card">
+                <h3>Быстро</h3>
+                <p>Ремонт стандартного гаража занимает всего 1 день.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Надежно</h3>
+                <p>Используем проверенные материалы Технониколь. Гарантия по договору.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Честно</h3>
+                <p>Выезд замерщика и точный расчет стоимости — бесплатно.</p>
+            </div>
+        </section>
+
+        <!-- Блок цен и калькулятор -->
+        <section class="prices">
+            <h2>Стоимость ремонта (работа + материал)</h2>
+            <div class="price-row">
+                <span>Материал класса «Стандарт» </span>
+                <strong>от 950 руб/м²</strong>
+            </div>
+            <div class="price-row">
+                <span>Материал класса «Премиум» </span>
+                <strong>от 1 500 руб/м²</strong>
+            </div>
+            
+            <!-- Интерактивный калькулятор -->
+            <div class="calc-box">
+                <h3 style="margin-top: 0; color: var(--dark);">Рассчитать примерную стоимость</h3>
+                
+                <div>
+                    <label>Тип ремонта:</label>
+                    <select id="calc-type">
+                        <option value="0">Текущий ремонт (в 1 слой)</option>
+                        <option value="150">Капитальный ремонт (от 150 руб/м² за демонтаж)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Класс материала:</label>
+                    <select id="calc-material">
+                        <option value="950">Стандарт (950 руб/м² с материалом)</option>
+                        <option value="1500">Премиум (1500 руб/м² с материалом)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Примерная площадь (м²):</label>
+                    <input type="number" id="calc-area" value="24" min="5" max="500">
+                    <small style="color: #666; display:block; margin-top: 5px;">* Цены указаны ориентировочно.Окончательная стоимость определяется после замеров</small>
+                </div>
+
+                <div style="font-size: 1.3rem; font-weight: bold; margin-top: 20px; color: var(--dark); margin-bottom: 0;">
+                    Итого (работа + материал): <span id="calc-result" style="color: var(--accent);">24 000</span> руб.
+                </div>
+            </div>
+        </section>
+
+        <!-- Портфолио -->
+        <section class="portfolio">
+            <h2>Примеры выполненных работ</h2>
+            <div class="gallery">
+                <!-- Положите файлы картинок рядом с index.html с такими именами -->
+                <img src="photo1.jpg" alt="Ремонт крыши гаража фото 1">
+                <img src="photo2.jpg" alt="Ремонт крыши гаража фото 2">
+                <img src="photo3.jpg" alt="Ремонт крыши гаража фото 3">
+            </div>
+        </section>
+       <script>
+    // Находим элементы на странице
+    const calcType = document.getElementById('calc-type');
+    const calcMaterial = document.getElementById('calc-material');
+    const calcArea = document.getElementById('calc-area');
+    const calcResult = document.getElementById('calc-result');
+
+    // Функция пересчета
+    function calculate() {
+        // Защита от пустых значений: если элементы не найдены, выходим из функции
+        if (!calcType || !calcMaterial || !calcArea || !calcResult) return;
+
+        const basePrice = parseInt(calcMaterial.value) || 0;
+        const extraPrice = parseInt(calcType.value) || 0;
+        const area = parseFloat(calcArea.value) || 0;
+
+        // Формула: (Базовая цена + надбавка за демонтаж) * площадь
+        const total = (basePrice + extraPrice) * area;
+
+        // Красиво форматируем число (добавляем пробелы: 24 000 вместо 24000)
+        calcResult.textContent = total.toLocaleString('ru-RU');
+    }
+
+    // Навешиваем события: при любом изменении запускаем расчет
+    if (calcType) calcType.addEventListener('change', calculate);
+    if (calcMaterial) calcMaterial.addEventListener('change', calculate);
+    if (calcArea) calcArea.addEventListener('input', calculate);
+
+    // Считаем первый раз сразу при загрузке страницы
+    calculate();
+</script>
+
+
+    </script>
+             <!-- Блок контактов: Карточки мастеров -->
+        <section class="contacts-section" style="margin-top: 40px;">
+            <h2 style="color: var(--dark); text-align: center; margin-bottom: 25px;">Связаться с мастерами напрямую</h2>
+            
+            <div class="contacts-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                
+                <!-- Карточка Мастера 1 (Отец) -->
+                <div class="contact-card" style="background: white; border-radius: 16px; padding: 30px; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
+                    <!-- Прикольный строительный аватар-заглушка -->
+                    <div style="width: 90px; height: 90px; background: #e0f2fe; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
+                        👷‍♂️
+                    </div>
+                    <h3 style="margin: 0 0 5px 0; color: var(--dark); font-size: 1.4rem;">Андрей</h3>
+                    
+                    
+                    <!-- Кнопка звонка (Замените +79991112233 на реальный номер) -->
+                    <a href="tel:+79058451280" style="display: block; background: var(--dark); color: white; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; margin-bottom: 10px; transition: 0.2s;">
+                        📞 Позвонить: +79058451280
+                    </a>
+                    
+                    
+
+                <!-- Карточка Мастера 2 (Дядя) -->
+                <div class="contact-card" style="background: white; border-radius: 16px; padding: 30px; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
+                    <!-- Прикольный строительный аватар-заглушка -->
+                    <div style="width: 90px; height: 90px; background: #fef3c7; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
+                        🛠️
+                    </div>
+                    <h3 style="margin: 0 0 5px 0; color: var(--dark); font-size: 1.4rem;">Павел</h3>
+                    
+                    
+                    <!-- Кнопка звонка (Замените +79994445566 на реальный номер) -->
+                    <a href="tel:+79128475815" style="display: block; background: var(--dark); color: white; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; margin-bottom: 10px; transition: 0.2s;">
+                        📞 Позвонить: +79128475815
+                    </a>
+                    
+                    
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </style>
+</head>
+<body>
